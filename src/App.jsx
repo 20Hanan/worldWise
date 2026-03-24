@@ -9,27 +9,12 @@ import Login from "./pages/Login.jsx";
 import CityList from "./components/CityList.jsx";
 import CountryList from "./components/CountryList.jsx";
 import City from "./components/City.jsx";
+import Form from "./components/Form.jsx";
+import { CitiesProvider } from "./contexts/CitiesContext.jsx";
 function App() {
-const [cities,setCities] = useState([]);
-const [isLoading,setIsLoading] = useState(false);
-const BASE_URL = "http://localhost:8000";
-useEffect(function (){
-async function fetchCities() {
-  try {
-     setIsLoading(true);
-  const res=await fetch(`${BASE_URL}/cities`);
-  const data = await res.json();
-  setCities(data);
-  } catch (error) {
-    console.error("Error fetching cities:", error);
-  } finally {
-    setIsLoading(false);
-  }
-  
-}
-fetchCities();
-},[])
+
   return (
+    <CitiesProvider>
     <BrowserRouter>
       <Routes>
         <Route
@@ -52,8 +37,8 @@ fetchCities();
             index
             element={
               <CityList
-                isLoading={isLoading}
-                cities={cities}
+                // isLoading={isLoading}
+                // cities={cities}
               />
             }
           />
@@ -61,24 +46,27 @@ fetchCities();
             path="cities"
             element={
               <CityList
-                isLoading={isLoading}
-                cities={cities}
+                // isLoading={isLoading}
+                // cities={cities}
               />
             }
           />
-          <Route path="cities/:id" element={<City/>}/>
+          <Route
+            path="cities/:id"
+            element={<City />}
+          />
           <Route
             path="countries"
             element={
               <CountryList
-                isLoading={isLoading}
-                cities={cities}
+                // isLoading={isLoading}
+                // cities={cities}
               />
             }
           />
           <Route
             path="form"
-            element={<p>form</p>}
+            element={<Form/>}
           />
         </Route>
         <Route
@@ -91,6 +79,7 @@ fetchCities();
         />
       </Routes>
     </BrowserRouter>
+    </CitiesProvider>
   );
 }
 

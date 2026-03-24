@@ -2,6 +2,7 @@ import styles from "./CountryList.module.css";
 import Spinner from "./Spinner.jsx";
 import CountryItem from "./CountryItem.jsx";
 import Message from "./Message.jsx";
+import { useCities } from "../contexts/CitiesContext.jsx";
   const flagemojiToPNG = flag => {
     var countryCode = Array.from(flag, codeUnit => codeUnit.codePointAt())
       .map(char => String.fromCharCode(char - 127397).toLowerCase())
@@ -13,7 +14,8 @@ import Message from "./Message.jsx";
       />
     );
   };
-function CountryList({ isLoading, cities }) {
+function CountryList() {
+    const { isLoading, cities } = useCities();
   if (isLoading) return <Spinner />;
   if (!cities.length)
     return (
