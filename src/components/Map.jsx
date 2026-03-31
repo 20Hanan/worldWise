@@ -11,19 +11,30 @@ import { useEffect, useState } from "react";
 import { useCities } from "../contexts/CitiesContext";
 
 import styles from "./Map.module.css";
+import { useGeolocation } from "../hooks/useGeoLocation";
+import Button from "../components/Button"
+import { useUrlPosition } from "../hooks/UseUrlPosition";
 
 function Map() {
   const { cities } = useCities();
   const [mapPosition, setMapPosition] = useState([40, 0]);
   const [searchParams, setSearchParams] = useSearchParams();
-  const mapLat = searchParams.get("lat");
-  const mapLng = searchParams.get("lng");
+  const {isLoading:isLoadingPosition,position:geoLocationPosition,getPosition
+  }=useGeolocation();
+  // const mapLat = searchParams.get("lat");
+  // const mapLng = searchParams.get("lng");
+  const [mapLat,mapLng]=useUrlPosition()
   useEffect(
     function () {
       if (mapLat && mapLng) setMapPosition([mapLat, mapLng]);
     },
     [mapLat, mapLng],
   );
+  useEffect(
+    function (){
+if(geoLocationPosition) setMapPosition([geoLocationPosition.lat,geoLocationPosition.lng])
+    },[geoLocationPosition]
+  )
   const flagemojiToPNG = flag => {
     if (!flag) return null;
 
@@ -39,6 +50,10 @@ function Map() {
   };
   return (
     <div className={styles.mapContainer}>
+      {!geoLocationPosition && <Button type="position" onClick={getPosition}>
+        {isLoadingPosition?"Loading...":"use your Position"}
+      </Button>
+      }
       <MapContainer
         className={styles.map}
         center={mapPosition}
