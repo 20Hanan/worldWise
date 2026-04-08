@@ -6,7 +6,7 @@ import { useCities } from '../contexts/CitiesContext.jsx';
 function CityList() {
     const { isLoading, cities }= useCities();
     if (isLoading) return <Spinner/>
-    if(!cities.length)return <Message message="Add Your First City by clkicking on a city on the map"/>
+    if(!cities.length)return <Message message="Add Your First City by clicking on a city on the map"/>
     console.log(cities)
     return (
         <ul className={styles.cityList}>
