@@ -1,3 +1,28 @@
 {
-  "cities": []
+  "cities": [
+    {
+      "cityName": "Madrid",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2026-04-25T10:31:44.998Z",
+      "notes": "",
+      "position": {
+        "lat": "40.53342033568089",
+        "lng": "-3.8232421875000004"
+      },
+      "id": 1
+    },
+    {
+      "cityName": "Macotera",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2026-04-25T10:31:50.150Z",
+      "notes": "",
+      "position": {
+        "lat": "40.850134414210785",
+        "lng": "-5.3173828125"
+      },
+      "id": 2
+    }
+  ]
 }

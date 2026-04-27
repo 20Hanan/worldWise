@@ -1,4 +1,4 @@
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage.jsx";
 import Product from "./pages/Product.jsx";
@@ -11,75 +11,63 @@ import CountryList from "./components/CountryList.jsx";
 import City from "./components/City.jsx";
 import Form from "./components/Form.jsx";
 import { CitiesProvider } from "./contexts/CitiesContext.jsx";
+import { AuthProvider } from "./contexts/FakeAuthContext.jsx";
+import ProtactedRoute from './pages/ProtactedRoute';
 function App() {
-
   return (
-    <CitiesProvider>
-    <BrowserRouter>
-      <Routes>
-        <Route
-          path="/"
-          element={<HomePage />}
-        />
-        <Route
-          path="/product"
-          element={<Product />}
-        />
-        <Route
-          path="/pricing"
-          element={<Pricing />}
-        />
-        <Route
-          path="/app"
-          element={<AppLayout />}
-        >
-          <Route
-            index
-            element={
-              <CityList
-                // isLoading={isLoading}
-                // cities={cities}
+    <AuthProvider>
+      <CitiesProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route
+              path="/"
+              element={<HomePage />}
+            />
+            <Route
+              path="/product"
+              element={<Product />}
+            />
+            <Route
+              path="/pricing"
+              element={<Pricing />}
+            />
+            <Route
+              path="/app"
+              element={<ProtactedRoute><AppLayout /></ProtactedRoute>}
+            >
+              <Route
+                index
+                element={<CityList />}
               />
-            }
-          />
-          <Route
-            path="cities"
-            element={
-              <CityList
-                // isLoading={isLoading}
-                // cities={cities}
+              <Route
+                path="cities"
+                element={<CityList />}
               />
-            }
-          />
-          <Route
-            path="cities/:id"
-            element={<City />}
-          />
-          <Route
-            path="countries"
-            element={
-              <CountryList
-                // isLoading={isLoading}
-                // cities={cities}
+              <Route
+                path="cities/:id"
+                element={<City />}
               />
-            }
-          />
-          <Route
-            path="form"
-            element={<Form/>}
-          />
-        </Route>
-        <Route
-          path="/login"
-          element={<Login />}
-        />
-        <Route
-          path="*"
-          element={<PageNotFound />}
-        />
-      </Routes>
-    </BrowserRouter>
-    </CitiesProvider>
+              <Route
+                path="countries"
+                element={<CountryList />}
+              />
+              <Route
+                path="form"
+                element={<Form />}
+              />
+            </Route>
+            <Route
+              path="/login"
+              element={<Login />}
+            />
+            <Route
+              path="*"
+              element={<PageNotFound />}
+            />
+          </Routes>
+        </BrowserRouter>
+      </CitiesProvider>
+    </AuthProvider>
   );
 }
 
