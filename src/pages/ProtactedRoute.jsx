@@ -1,6 +1,6 @@
 import { useAuth } from "../contexts/FakeAuthContext";
 import {useNavigate} from "react-router-dom";
-import {useEffect} from "React";
+import { useEffect } from "react";
 function ProtactedRoute({children}) {
     const {isAuthenticated}=useAuth();
    const navigate=useNavigate();
