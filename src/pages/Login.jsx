@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import PageNav from "../components/PageNav";
 import { useAuth } from "../contexts/FakeAuthContext";
 import { useNavigate } from "react-router-dom";
-import Button from './../components/Button';
+import Button from '../components/Button';
 export default function Login() {
   // PRE-FILL FOR DEV PURPOSES
   const [email, setEmail] = useState("jack@example.com");
