@@ -10,7 +10,7 @@ import Message from "./Message.jsx";
 import Spinner from "./Spinner.jsx";
 
 import BackButton from "./BackButton.jsx";
-import { useUrlPosition } from "../hooks/UseUrlPosition.jsx";
+import { useUrlPosition } from "../hooks/useUrlPosition.jsx";
 import { flagemojiToPNG } from "../hooks/flagemojiToPng.jsx";
 import { useCities } from "../contexts/CitiesContext.jsx";
 import { useNavigate } from "react-router-dom";
