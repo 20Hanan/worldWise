@@ -48,12 +48,18 @@ if(geoLocationPosition) setMapPosition([geoLocationPosition.lat,geoLocationPosit
       />
     );
   };
+
+
   return (
     <div className={styles.mapContainer}>
-      {!geoLocationPosition && <Button type="position" onClick={getPosition}>
-        {isLoadingPosition?"Loading...":"use your Position"}
-      </Button>
-      }
+      {!geoLocationPosition && (
+        <Button
+          type="position"
+          onClick={getPosition}
+        >
+          {isLoadingPosition ? "Loading..." : "use your Position"}
+        </Button>
+      )}
       <MapContainer
         className={styles.map}
         center={mapPosition}
@@ -65,6 +71,8 @@ if(geoLocationPosition) setMapPosition([geoLocationPosition.lat,geoLocationPosit
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
         />
+
+        {console.log("render cities", cities)}
         {cities.map(city => (
           <Marker
             position={[city.position.lat, city.position.lng]}

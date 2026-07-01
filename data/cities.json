@@ -1,28 +1,76 @@
 {
   "cities": [
     {
-      "cityName": "Madrid",
+      "cityName": "Les Valls de Valira",
       "country": "Spain",
       "emoji": "🇪🇸",
-      "date": "2026-04-25T10:31:44.998Z",
+      "date": "2026-05-25T15:13:05.749Z",
       "notes": "",
       "position": {
-        "lat": "40.53342033568089",
-        "lng": "-3.8232421875000004"
+        "lat": "42.522053247135105",
+        "lng": "1.4282226562500002"
       },
       "id": 1
     },
     {
-      "cityName": "Macotera",
+      "cityName": "Quintanilla de Onsona",
       "country": "Spain",
       "emoji": "🇪🇸",
-      "date": "2026-04-25T10:31:50.150Z",
+      "date": "2026-05-25T15:15:17.559Z",
       "notes": "",
       "position": {
-        "lat": "40.850134414210785",
-        "lng": "-5.3173828125"
+        "lat": "42.47366649815852",
+        "lng": "-4.702148437500001"
       },
       "id": 2
+    },
+    {
+      "cityName": "Padiernos",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2026-06-11T12:41:52.402Z",
+      "notes": "ll",
+      "position": {
+        "lat": "40.64877434225491",
+        "lng": "-4.833984375000001"
+      },
+      "id": 3
+    },
+    {
+      "cityName": "Almazul",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2026-06-17T16:58:38.714Z",
+      "notes": "",
+      "position": {
+        "lat": "41.54265746261064",
+        "lng": "-2.1093750000000004"
+      },
+      "id": 4
+    },
+    {
+      "cityName": "Villalcampo",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2026-06-27T16:14:40.801Z",
+      "notes": "",
+      "position": {
+        "lat": "41.54265746261064",
+        "lng": "-6.08642578125"
+      },
+      "id": 5
+    },
+    {
+      "cityName": "Huete",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2026-06-27T16:26:43.319Z",
+      "notes": "",
+      "position": {
+        "lat": "40.13010845541176",
+        "lng": "-2.4609375000000004"
+      },
+      "id": 6
     }
   ]
 }
